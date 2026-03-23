@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* 1. ENABLE CLASS-BASED DARK MODE */
+/* This line replaces "darkMode: 'class'" from the old config file */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* You can add custom colors here if needed later */
+}
+
+/* 2. GLOBAL STYLES & TRANSITIONS */
+@layer base {
+  body {
+    /* Add the background color transition here */
+    @apply bg-white text-slate-900 transition-colors duration-300 dark:bg-[#050011] dark:text-white;
+  }
+}
+
+/* 3. CUSTOM SCROLLBAR (Optional but recommended for your design) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-[#050011];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-fuchsia-500;
+}
